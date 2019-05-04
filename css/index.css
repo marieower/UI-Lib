@@ -1,0 +1,594 @@
+@charset "UTF-8";
+* {
+  font-family: Roboto, sans-serif;
+  color: #666363;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.label-row, .label-column, .group-box {
+  margin-bottom: 30px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea, input[type="number"] {
+  border: 1px solid #C4C4C4;
+  border-radius: 5px;
+  -webkit-transition: border;
+  transition: border;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+}
+
+input:hover[type="text"], input:hover[type="email"], input:hover[type="password"], textarea:hover, input:hover[type="number"], input:focus[type="text"], input:focus[type="email"], input:focus[type="password"], textarea:focus, input:focus[type="number"] {
+  border: 1px solid #61AAFF;
+}
+
+button, .warning-button, .success-button, input[type="text"], input[type="email"], input[type="password"], textarea, input[type="number"] {
+  height: 30px;
+  padding: 5px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button {
+  width: 130px;
+  background: none;
+  border-radius: 5px;
+  border: 1px solid #61AAFF;
+  color: #61AAFF;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+button:hover, button:active {
+  color: white;
+  background-color: #61AAFF;
+  border: none;
+}
+
+.warning-button {
+  width: 130px;
+  background: none;
+  border-radius: 5px;
+  border: 1px solid #F17272;
+  color: #F17272;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.warning-button:hover, .warning-button:active {
+  color: white;
+  background-color: #F17272;
+  border: none;
+}
+
+.success-button {
+  width: 130px;
+  background: none;
+  border-radius: 5px;
+  border: 1px solid #74C695;
+  color: #74C695;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.success-button:hover, .success-button:active {
+  color: white;
+  background-color: #74C695;
+  border: none;
+}
+
+input[type="checkbox"] {
+  display: block;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+}
+
+input[type="checkbox"]::after {
+  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #C4C4C4;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+input[type="checkbox"]::after {
+  content: "✓";
+  color: white;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  background-color: #61AAFF;
+  border-radius: 5px;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+}
+
+input[type="radio"] {
+  display: block;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+input[type="radio"]::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #C4C4C4;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+input[type="radio"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid white;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #61AAFF;
+  border-radius: 50%;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+input[type="radio"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #61AAFF;
+  border: 3px solid white;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+input[class="switch"] {
+  display: block;
+  background-color: white;
+  width: 60px;
+  height: 30px;
+  position: relative;
+}
+
+input[class="switch"]::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #C4C4C4;
+  background-color: white;
+  border-radius: 15px;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+input[class="switch"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #C4C4C4;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+input[class="switch"]:checked::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 30px;
+  background-color: #61AAFF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #61AAFF;
+  border-radius: 15px;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+input[class="switch"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 30px;
+  height: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #61AAFF;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 200px;
+  height: 1px;
+  background: #C4C4C4;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #C4C4C4;
+  background: white;
+  cursor: pointer;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -moz-appearance: none;
+       appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #C4C4C4;
+  background: white;
+  cursor: pointer;
+  -webkit-transition: all;
+  transition: all;
+  transition-duration: 0.5s;
+}
+
+input[type="range"]:active {
+  background: #61AAFF;
+}
+
+input[type="range"]:active::-moz-range-thumb {
+  border: 1px solid #61AAFF;
+  background: white;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  border: 1px solid #61AAFF;
+  background: white;
+}
+
+.label-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.label-row input {
+  margin-left: 20px;
+}
+
+.row-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.row-reverse input {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.label-column {
+  max-width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.label-column input, .label-column textarea, .label-column .combo-box {
+  margin-top: 10px;
+}
+
+.label-column input[type="range"] {
+  margin-top: 20px;
+}
+
+input[type="number"] {
+  width: 130px;
+}
+
+.group-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 200px;
+}
+
+.group-box h2 {
+  margin-bottom: 20px;
+}
+
+.group-box .label-row {
+  margin-left: 10px;
+  margin-bottom: 15px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.group-box .label-row:last-child {
+  margin-bottom: 0;
+}
+
+.group-box input {
+  margin-right: 20px;
+}
+
+table {
+  margin-bottom: 40px;
+  border-collapse: collapse;
+}
+
+table tr {
+  height: 50px;
+}
+
+table thead th {
+  font-weight: 400;
+}
+
+table th {
+  min-width: 100px;
+  text-align: left;
+  border-bottom: 1px solid #C4C4C4;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+table tr:hover th {
+  color: #61AAFF;
+}
+
+table thead:hover th {
+  color: #666363;
+}
+
+table .long-cell {
+  min-width: 250px;
+}
+
+.combo-box {
+  width: 200px;
+  position: relative;
+  cursor: pointer;
+}
+
+.combo-box:hover .open {
+  background-image: url("../combo-box--opened.png");
+}
+
+.combo-box:hover .current {
+  border: 1px solid #61AAFF;
+}
+
+.combo-box .current {
+  width: 200px;
+  height: 30px;
+  padding: 5px 10px 5px 10px;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #C4C4C4;
+  border-radius: 5px;
+  position: relative;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.combo-box .open {
+  background-image: url("../combo-box--closed.png");
+  background-size: 100% 100%;
+  width: 10px;
+  height: 5px;
+  position: absolute;
+  right: 5px;
+  top: 12.5px;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.combo-box .options {
+  width: 200px;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  background-color: white;
+  z-index: 100;
+  display: none;
+  list-style: none;
+}
+
+.combo-box .options .option {
+  width: 200px;
+  height: 30px;
+  padding: 5px 10px 5px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #C4C4C4;
+  margin-top: -1px;
+  z-index: 1;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.combo-box .options .option:hover {
+  color: #61AAFF;
+  border: 1px solid #61AAFF;
+  z-index: 90;
+  position: relative;
+}
+
+.combo-box .options .option:last-child {
+  border-radius: 0 0 5px 5px;
+}
+
+.combo-box--active .current {
+  border: 1px solid #61AAFF;
+  border-radius: 5px 5px 0 0;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.combo-box--active .open {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-image: url("../combo-box--opened.png");
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.combo-box--active .options {
+  display: block;
+  -webkit-transition: all;
+  transition: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+/*# sourceMappingURL=index.css.map */

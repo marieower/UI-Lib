@@ -1,0 +1,496 @@
+// Variables part ->
+    
+$main-font:  Roboto, sans-serif
+$font-color: #666363
+$border-color: #C4C4C4
+$active-color: #61AAFF
+$warning-color: #F17272
+$success-color: #74C695
+
+// Variables part <-
+
+///////////////////////////////////////
+
+// Main part ->
+
+* 
+    font-family: $main-font
+    color: $font-color
+    font-weight: 300
+    font-size: 16px
+
+// Main part <-
+
+///////////////////////////////////////
+
+// Mixins part ->
+
+=transition-all($duration)
+    transition: all
+    transition-duration: $duration
+
+=button($color, $width)
+    width: $width
+    @extend %default-size
+    background: none 
+    border-radius: 5px
+    border: 1px solid $color
+    color: $color
+    +transition-all(.5s)
+
+    &:hover, &:active
+        color: white
+        background-color: $color
+        border: none
+
+%margin-bottom
+    margin-bottom: 30px
+
+%radious-contour
+    border: 1px solid $border-color
+    border-radius: 5px
+    transition: border
+    transition-duration: .5s
+    &:hover, &:focus
+        border: 1px solid $active-color
+
+%default-size
+    height: 30px
+    padding: 5px 10px
+    box-sizing: border-box
+
+// Mixins part <-
+
+///////////////////////////////////////
+
+// Buttons ->
+
+button
+    +button($active-color, 130px)
+
+.warning-button
+    +button($warning-color, 130px)
+
+.success-button
+    +button($success-color, 130px)
+
+// Buttons <-
+
+///////////////////////////////////////
+
+// [Radio, Checkbox, Switch, Range] ->
+
+// # Checkbox ->
+
+input[type="checkbox"]
+    display: block
+    background-color: white
+    width: 30px
+    height: 30px
+
+    &::after
+        content: ""
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 30px
+        height: 30px
+        box-sizing: border-box
+        border: 1px solid $border-color
+        background-color: white
+        border-radius: 5px
+        +transition-all(.5s)
+
+    &::after
+        content: "✓"
+        color: white
+
+    &:checked::after
+        content: ""
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 30px
+        height: 30px
+        box-sizing: border-box
+        border: none
+        background-color: $active-color
+        border-radius: 5px
+
+    &:checked::after
+        content: "✓"
+        color: white
+
+// # Checkbox <-
+
+// # Radio ->
+
+input[type="radio"]
+    display: block
+    background-color: white
+    width: 30px
+    height: 30px
+    position: relative
+
+    &::before
+        content: ""
+        display: block
+        width: 30px
+        height: 30px
+        box-sizing: border-box
+        border: 1px solid $border-color
+        background-color: white
+        border-radius: 50%
+        +transition-all(.5s)
+
+    &::after
+        content: ""
+        display: block
+        position: absolute
+        top: 2px
+        left: 2px
+        width: 26px
+        height: 26px
+        box-sizing: border-box
+        border-radius: 50%
+        background-color: white
+        border: 3px solid white
+        +transition-all(.5s)
+
+    &:checked::before
+        content: ""
+        display: block
+        width: 30px
+        height: 30px
+        background-color: white
+        box-sizing: border-box
+        border: 1px solid $active-color
+        border-radius: 50%
+        +transition-all(.5s)
+
+    &:checked::after
+        content: ""
+        display: block
+        position: absolute
+        top: 2px
+        left: 2px
+        width: 26px
+        height: 26px
+        box-sizing: border-box
+        border-radius: 50%
+        background-color: $active-color
+        border: 3px solid white
+        +transition-all(.5s)
+
+// # Radio <-
+
+// # Switch ->
+
+input[class="switch"]
+    display: block
+    background-color: white
+    width: 60px
+    height: 30px
+    position: relative
+
+    &::before
+        content: ""
+        display: block
+        width: 60px
+        height: 30px
+        box-sizing: border-box
+        border: 1px solid $border-color
+        background-color: white
+        border-radius: 15px
+        +transition-all(.5s)
+
+    &::after
+        content: ""
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        width: 30px
+        height: 30px
+        box-sizing: border-box
+        border-radius: 50%
+        background-color: white
+        border: 1px solid $border-color
+        +transition-all(.5s)
+
+    &:checked::before
+        content: ""
+        display: block
+        width: 60px
+        height: 30px
+        background-color: $active-color
+        box-sizing: border-box
+        border: 1px solid $active-color
+        border-radius: 15px
+        +transition-all(.5s)
+
+    &:checked::after
+        content: ""
+        display: block
+        position: absolute
+        top: 0
+        left: 30px
+        width: 30px
+        height: 30px
+        box-sizing: border-box
+        border-radius: 50%
+        background-color: white
+        border: 1px solid $active-color
+        +transition-all(.5s)
+
+// # Switch <-
+
+// # Range ->
+
+input[type="range"] 
+    appearance: none;
+    width: 200px;
+    height: 1px;
+    background: #C4C4C4;
+    +transition-all(.5s)
+
+    &::-webkit-slider-thumb 
+        appearance: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid #C4C4C4;
+        background: white;
+        cursor: pointer;
+        +transition-all(.5s)
+
+    &::-moz-range-thumb 
+        appearance: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid #C4C4C4;
+        background: white;
+        cursor: pointer;
+        +transition-all(.5s)
+
+    &:active 
+        background: #61AAFF;
+
+        &::-moz-range-thumb 
+            border: 1px solid #61AAFF;
+            background: white;
+
+        &::-webkit-slider-thumb 
+            border: 1px solid #61AAFF;
+            background: white;
+
+// # Range <-
+
+// [Radio, Checkbox, Switch, Range] <-
+
+///////////////////////////////////////
+
+// Row part ->
+
+.label-row
+    @extend %margin-bottom
+    display: flex
+    flex-direction: row
+    align-items: center
+
+    input
+        margin-left: 20px
+
+.row-reverse
+    flex-direction: row-reverse
+    justify-content: flex-end
+
+    input
+        margin-left: 0
+        margin-right: 20px
+    
+
+// Row part <-
+
+///////////////////////////////////////
+
+// Column part ->
+
+.label-column
+    max-width: 300px
+    @extend %margin-bottom
+    display: flex
+    flex-direction: column
+
+    input, textarea, .combo-box
+        margin-top: 10px
+
+    input[type="range"]
+        margin-top: 20px
+        
+
+input[type="text"], input[type="email"], input[type="password"], textarea
+    @extend %default-size
+    @extend %radious-contour
+
+input[type="number"]
+    width: 130px
+    @extend %default-size
+    @extend %radious-contour
+
+    // &::-webkit-inner-spin-button,
+    // &::-webkit-outer-spin-button
+    //     -webkit-appearance: none;
+    //     margin: 0;
+
+    //     &::after
+    //         content: ""
+    //         display: block
+    //         width: 10px
+    //         height: 10px
+    //         background-color: black
+    
+// Column part <-
+
+///////////////////////////////////////
+
+// Group-box part ->
+
+.group-box 
+    display: flex
+    flex-direction: column
+    max-width: 200px
+    @extend %margin-bottom
+    
+
+    h2 
+        margin-bottom: 20px
+
+    .label-row
+        margin-left: 10px
+        margin-bottom: 15px
+        flex-direction: row-reverse
+        justify-content: flex-end
+
+        &:last-child
+            margin-bottom: 0
+    
+    input
+        margin-right: 20px
+
+// Group-box part <-
+
+///////////////////////////////////////
+
+// Table part ->
+
+table
+    margin-bottom: 40px
+    border-collapse: collapse;
+
+    tr 
+        height: 50px
+        
+    thead th
+        font-weight: 400 
+
+    th 
+        min-width: 100px
+        text-align: left  
+        border-bottom: 1px solid $border-color
+        +transition-all(.5s)
+        
+    tr:hover
+        th
+            color: $active-color  
+
+    thead:hover th
+        color: $font-color      
+
+    .long-cell
+        min-width: 250px
+
+// Table part <-
+
+///////////////////////////////////////
+
+.combo-box
+    width: 200px
+    position: relative
+    cursor: pointer
+    
+    &:hover 
+        .open
+            background-image: url('../combo-box--opened.png')
+
+        .current 
+            border: 1px solid $active-color
+
+    .current 
+        width: 200px
+        height: 30px
+        padding: 5px 10px 5px 10px
+        margin: 0
+        box-sizing: border-box
+        border: 1px solid $border-color
+        border-radius: 5px
+        position: relative
+        +transition-all(.5s)
+
+    .open 
+        background-image: url('../combo-box--closed.png')
+        background-size: 100% 100%
+        width: 10px
+        height: 5px
+        position: absolute
+        right: 5px
+        top: 12.5px
+        +transition-all(.5s)
+
+    .options 
+        width: 200px
+        padding: 0
+        margin: 0
+        box-sizing: border-box
+        position: absolute
+        background-color: white
+        z-index: 100
+        display: none
+        list-style: none
+
+        .option
+            width: 200px
+            height: 30px
+            padding: 5px 10px 5px 10px
+            box-sizing: border-box
+            border: 1px solid $border-color
+            margin-top: -1px
+            z-index: 1
+            +transition-all(.5s)
+
+            &:hover 
+                color: $active-color
+                border: 1px solid $active-color
+                z-index: 90
+                position: relative
+
+            &:last-child
+                border-radius: 0 0 5px 5px
+                
+
+.combo-box--active
+    .current
+        border: 1px solid $active-color
+        border-radius: 5px 5px 0 0
+        +transition-all(.5s)
+        
+
+    .open
+        transform: rotate(180deg)
+        background-image: url('../combo-box--opened.png')
+        +transition-all(.5s)
+
+    .options
+        display: block
+        +transition-all(.5s)
