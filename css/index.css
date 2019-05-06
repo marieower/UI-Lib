@@ -489,7 +489,7 @@ table .long-cell {
 }
 
 .combo-box:hover .open {
-  background-image: url("../combo-box--opened.png");
+  background-image: url("../images/combo-box--opened.png");
 }
 
 .combo-box:hover .current {
@@ -513,7 +513,7 @@ table .long-cell {
 }
 
 .combo-box .open {
-  background-image: url("../combo-box--closed.png");
+  background-image: url("../images/combo-box--closed.png");
   background-size: 100% 100%;
   width: 10px;
   height: 5px;
