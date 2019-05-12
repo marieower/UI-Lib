@@ -62,3 +62,25 @@ if (typeof comboboxes != undefined) {
 // Combo-box part <-
 
 ///////////////////////////////////////
+
+// Header part -> 
+
+let header = document.querySelector('header');
+let navigationBtn = header.querySelector('#nav-button');
+let navigation = header.querySelector('nav');
+
+let mobileNavigation = navigation.cloneNode(true);
+mobileNavigation.classList.add('nav--mobile');
+mobileNavigation.classList.add('none');
+
+console.log(mobileNavigation)
+
+header.appendChild(mobileNavigation);
+
+navigationBtn.addEventListener('click', (evt) => {
+    evt.target.classList.toggle('nav-button--active');
+    mobileNavigation.classList.toggle('none');
+})
+
+
+// Header part <-

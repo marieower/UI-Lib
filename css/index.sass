@@ -1,11 +1,12 @@
 // Variables part ->
     
 $main-font:  Roboto, sans-serif
-$font-color: #666363
+$font-color: #303030
 $border-color: #C4C4C4
 $active-color: #61AAFF
 $warning-color: #F17272
 $success-color: #74C695
+$outset-y: 0px 4px 4px rgba(0, 0, 0, 0.25)
 
 // Variables part <-
 
@@ -18,6 +19,9 @@ $success-color: #74C695
     color: $font-color
     font-weight: 300
     font-size: 16px
+
+body 
+    min-width: 400px
 
 // Main part <-
 
@@ -77,6 +81,120 @@ button
 // Buttons <-
 
 ///////////////////////////////////////
+
+// Header ->
+header 
+    width: 100%
+    padding: 20px calc(50% - 380px) 20px calc(50% - 380px)
+    box-sizing: border-box
+    border-bottom: 1px solid $border-color
+    display: flex
+    flex-direction: row
+    align-items: center
+    position: fixed
+    top: 0
+    z-index: 100
+    background-color: white
+
+    #logo 
+        min-width: 300px
+        margin: 0 20px
+        font-size: 25px
+        +transition-all(.5s)
+
+        &:hover
+            color: $active-color
+
+    nav 
+        min-width: 400px
+        max-width: 600px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        flex-wrap: wrap
+
+        a 
+            margin: 5px 10px
+            text-decoration: none
+            +transition-all(.5s)
+
+            &:hover
+                color: $active-color
+
+    .nav--mobile
+        display: none
+
+    #nav-button
+        width: 30px
+        height: 30px
+        margin-right: 20px
+        background-image: url('../images/navigation-button--closed.png')
+        background-size: 100% 100%
+        border: none
+        display: none
+        border-radius: 0
+        +transition-all(.5s)
+
+        &:hover 
+            background-color: inherit
+            background-image: url('../images/navigation-button--closed--hover.png')
+
+    .nav-button--active
+        background-image: url('../images/navigation-button--opened.png')!important
+        +transition-all(.5s)
+
+        &:hover 
+            background-image: url('../images/navigation-button--opened--hover.png')!important
+
+body:before
+    display: block
+    content: ""
+    width: 100%
+    height: 80px
+
+@media screen and (max-width: 800px)
+    header 
+        height: 60px
+        justify-content: space-between
+
+        nav 
+            display: none
+
+        #nav-button
+            display: block
+
+        .nav--mobile
+            max-width: none
+            position: absolute
+            top: 60px
+            left: 0
+            right: 0
+            display: flex
+            flex-direction: column
+            margin-top: -1px
+
+
+            a 
+                width: 100%
+                height: 60px
+                margin: 0
+                margin-top: -1px
+                padding: 20px
+                box-sizing: border-box
+                border-top: 1px solid $border-color
+                border-bottom: 1px solid $border-color
+                background-color: white
+                text-align: center
+                position: relative
+
+                &:hover
+                    z-index: 100
+                    border-top: 1px solid $active-color
+                    border-bottom: 1px solid $active-color
+
+
+    
+// Header <-
 
 // [Radio, Checkbox, Switch, Range] ->
 
@@ -494,3 +612,10 @@ table
     .options
         display: block
         +transition-all(.5s)
+
+// Programming classes ->
+
+.none 
+    display: none!important
+
+// Programming classes <-
